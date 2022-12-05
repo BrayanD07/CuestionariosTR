@@ -6,9 +6,8 @@ module.exports = function (req, res, next){
 		.populate("autor")
 		.exec(function(err, preg){
 		if(preg != null & owner_check(preg, req, res)){
-			res.locals.pregunta = preg;
-			return next();
 		}
+		      res.locals.pregunta = preg;}
 		else{
 			//Colocar código para Finalizar el ciclo de solicitud/respuestas
 			//Bug potencial aquí: solicitud colgada. CORREGIDO
